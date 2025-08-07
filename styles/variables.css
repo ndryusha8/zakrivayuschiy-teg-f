@@ -1,1 +1,31 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-font: 'Inter';
+  --second-font: 'Press Start 2P';
+  --main-weight: 410;
+  --title-weight: 715;
+  --accent-weight: 400;
+
+  /* Complex gradient background with grid effect and color transition */
+  --header-background-gradient:
+    repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      180deg,
+      #e7e7e7 0%,
+      #e7e7e7 0.01%,
+      #1a1a1a 100%
+    );
+}

@@ -13,4 +13,40 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: "wght" var(--accent-font);
+  gap: 100px;
+}
+
+.header {
+  background-image: var(--header-background-gradient);
+  background-attachment: fixed;
+  background-size: cover;
+  inline-size: 100%;
+  block-size: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: var(--second-font);
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.lazy-block {
+  inline-size: clamp(320px, 100%, 700px);
+  background-color: #fff;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  block-size: clamp(320px, 100%, 368px);
+  border: 2px solid #000;
+}
+
+.header-title {
+  font-size: clamp(4.1rem, 100%, 10rem);
+  padding-bottom: 20px;
 }
