@@ -10,9 +10,21 @@
 
 */
 
+@keyframes buttonAnimation {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  inline-size: 100%;
+  font-weight: var(--main-weight);
   font-family: var(--main-font), sans-serif;
   font-variation-settings: "wght" var(--accent-font);
   gap: 100px;
@@ -30,6 +42,7 @@
   text-transform: uppercase;
   text-align: center;
   padding-top: 100px;
+  font-size: var(--main-font-size, 18px);
 }
 
 .lazy-block {
@@ -37,16 +50,229 @@
   background-color: #fff;
 }
 
+.card-text {
+  inline-size: 100%;
+}
+
 .header-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  block-size: clamp(320px, 100%, 368px);
+  block-size: min(49vh, 368px);
   border: 2px solid #000;
 }
 
 .header-title {
-  font-size: clamp(4.1rem, 100%, 10rem);
+  font-size: min(13.06vw, 65px);
   padding-bottom: 20px;
+}
+
+.header-subtitle {
+  font-size: min(3.73vw, 23px);
+  font-weight: var(--accent-weight);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: calc(-1*(100vh - 200px - min(49vh, 368px)));
+  gap: 50px;
+  padding-bottom: 100px;
+}
+
+.card {
+  border: 2px solid #000;
+}
+
+.card-title {
+  font-weight: var(--title-weight);
+  padding: 3px 10px;
+  letter-spacing: -0.4px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 19px 25px 25px;
+  gap: 24px;
+  line-height: 117%;
+  font-size: var(--main-font-size, 18px);
+}
+
+.card-like-content {
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.button__text {
+  font-size: var(--second-font-size, 14px);
+  line-height: 90%;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference
+}
+
+.like-icon {
+  inline-size: 27px;
+  block-size: 24px;
+  background-image: url("../images/heart.svg");
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.3s linear;
+}
+
+.like-icon:hover {
+  cursor: pointer;
+  background-image: url("../images/Frame22.svg");
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.card-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__like-button {
+  inline-size: 130px;
+  padding: 9px 17px;
+  background-color: #fff;
+  font-family: var(--second-font), sans-serif;
+  border: 2px solid #000;
+}
+
+.card-animation:hover {
+  cursor: pointer;
+}
+
+.card-animation::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: #000;
+  transform: translate(-100%, -100%) ;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card-animation:hover::after {
+  transform: translate(0, 0);
+}
+
+.image-container {
+  min-inline-size: 320px;
+  max-inline-size: 700px;
+  max-block-size: 700px;
+  min-block-size: 320px;
+}
+
+.image-card {
+  min-inline-size: 320px;
+  max-inline-size: 700px;
+  max-block-size: 700px;
+  min-block-size: 320px;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 2px solid #000;
+  border-top: 2px solid #000;
+}
+
+.save-button {
+  border: 2px solid #000;
+  padding: 15px 18px;
+  font-size: var(--second-font-size);
+  inline-size: min(81.6%, 335px);
+  background-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  gap: 8px;
+}
+
+.save-button-text {
+  font-family: var(--second-font), sans-serif;
+  font-size: var(--second-font-size);
+  letter-spacing: 0;
+  position: relative;
+  color: #fff;
+  z-index: 1;
+  mix-blend-mode: difference;
+}
+
+.image-disket {
+  position: relative;
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+
+@media(height > 667px){
+  .main {
+    gap: 50.5px;
+  }
+
+  .card-default {
+    order: 1;
+  }
+
+  .card-dark {
+    order: 2;
+  }
+
+  .card-grisaille {
+    order: 3;
+  }
+
+  .card-contrast {
+    order: 4;
+  }
+
+  .card-negative {
+    order: 5;
+  }
+
+  .card-neon {
+    order: 6;
+  }
+
+  .card-blur {
+    order: 7;
+  }
+
+  .card-brutal {
+    order: 8;
+  }
+
+  .save-button-container {
+    order: 9;
+  }
+
+  .save-button {
+    flex-direction: row;
+  }
+
+  .card-content {
+    padding: 25px;
+  }
+
+  .image-disket {
+    width: 21px;
+    height: 21px;
+  }
 }

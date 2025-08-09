@@ -5,7 +5,8 @@
   --main-weight: 410;
   --title-weight: 715;
   --accent-weight: 400;
-
+  --main-font-size: 18px;
+  --second-font-size: 14px;
   /* Complex gradient background with grid effect and color transition */
   --header-background-gradient:
     repeating-linear-gradient(
