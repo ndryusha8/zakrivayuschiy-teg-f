@@ -377,7 +377,7 @@ dialog::backdrop {
   backdrop-filter: blur(7px);
 }
 
-@media (height > 667px) {
+@media (width > 375px) {
   .main {
     gap: 49px;
   }
