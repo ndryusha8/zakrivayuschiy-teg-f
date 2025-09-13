@@ -17,7 +17,7 @@
   inline-size: 100%;
   font-weight: var(--main-weight);
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: "wght" var(--accent-font);
+  font-variation-settings: "wght" var(--accent-weight);
   gap: 100px;
 }
 
@@ -165,7 +165,7 @@
 }
 
 .like-icon:hover .core{
-  transition-delay: 0;
+  transition-delay: 0s;
   fill: var(--contour-color);
 }
 
@@ -181,12 +181,12 @@
 
 .like-icon:active .core{
   fill: var(--animation-fill-color);
-  transition-delay: 0;
+  transition-delay: 0s;
 }
 
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color);
-  transition-delay: 0;
+  transition-delay: 0s;
 }
 
 .like-icon.is-liked .main-body{
