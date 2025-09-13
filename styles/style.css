@@ -10,35 +10,34 @@
 
 */
 
-
 .page {
+  gap: 100px;
+  font-family: var(--main-font), sans-serif;
+  font-weight: var(--main-weight);
   min-inline-size: 320px;
   min-block-size: 100dvb;
   inline-size: 100%;
-  font-weight: var(--main-weight);
-  font-family: var(--main-font), sans-serif;
   font-variation-settings: "wght" var(--accent-weight);
-  gap: 100px;
 }
 
 .header {
-  background-image: var(--header-background-gradient);
-  background-attachment: fixed;
-  background-size: cover;
-  inline-size: 100%;
-  block-size: 100vh;
   display: flex;
   justify-content: center;
-  font-family: var(--second-font);
-  text-transform: uppercase;
-  text-align: center;
   padding-top: 100px;
+  font-family: var(--second-font);
   font-size: var(--main-font-size, 18px);
+  text-align: center;
+  text-transform: uppercase;
+  background-image: var(--header-background-gradient);
+  background-size: cover;
+  background-attachment: fixed;
+  inline-size: 100%;
+  block-size: 100vh;
 }
 
 .lazy-block {
-  inline-size: clamp(320px, 100%, 700px);
   background-color: #fff;
+  inline-size: clamp(320px, 100%, 700px);
 }
 
 .card-text {
@@ -50,18 +49,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  block-size: min(49vh, 368px);
   border: 2px solid #000;
+  block-size: min(49vh, 368px);
 }
 
 .header-title {
-  font-size: min(13.06vw, 65px);
   padding-bottom: 20px;
+  font-size: min(13.06vw, 65px);
 }
 
 .header-subtitle {
-  font-size: min(3.73vw, 23px);
   font-weight: var(--accent-weight);
+  font-size: min(3.73vw, 23px);
 }
 
 .main {
@@ -69,8 +68,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: calc(-1*(100vh - 200px - min(49vh, 368px)));
   gap: 48px;
+  margin-top: calc(-1 * (100vh - 200px - min(49vh, 368px)));
   padding-bottom: 100px;
 }
 
@@ -79,58 +78,58 @@
 }
 
 .card-title {
-  font-weight: var(--title-weight);
   padding: 5px 10px 3px 10px;
+  font-weight: var(--title-weight);
   letter-spacing: -0.4px;
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
-  padding: 19px 25px 25px;
   gap: 24px;
-  line-height: 117%;
+  padding: 19px 25px 25px;
   font-size: var(--main-font-size, 18px);
+  line-height: 117%;
 }
 
 .image-container::after {
-  content: '</HTML>';
+  content: "</HTML>";
   position: absolute;
   top: 30px;
   right: 25px;
+  opacity: 0.5;
+  font-family: var(--second-font), sans-serif;
   font-weight: var(--accent-weight);
   font-size: var(--second-font-size, 14px);
-  font-family: var(--second-font), sans-serif;
   text-transform: uppercase;
-  mix-blend-mode: hard-light;
   text-shadow: 0 0 3px #fff;
-  opacity: 0.5;
+  mix-blend-mode: hard-light;
 }
 
-@supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+@supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
   .image-container::after {
+    top: 28px;
+    text-shadow: none;
     -webkit-text-stroke: 1px #fff;
     text-stroke: 1px #fff;
-    text-shadow: none;
-    top: 28px;
   }
 }
 
 .card-like-content {
   display: flex;
-  align-self: flex-end;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 6px;
+  align-self: flex-end;
 }
 
 .button__text {
-  font-size: var(--second-font-size, 14px);
-  line-height: 90%;
-  color: #fff;
   position: relative;
   z-index: 1;
-  mix-blend-mode: difference
+  color: #fff;
+  font-size: var(--second-font-size, 14px);
+  line-height: 90%;
+  mix-blend-mode: difference;
 }
 
 .sparks {
@@ -164,9 +163,9 @@
   cursor: pointer;
 }
 
-.like-icon:hover .core{
-  transition-delay: 0s;
+.like-icon:hover .core {
   fill: var(--contour-color);
+  transition-delay: 0s;
 }
 
 .like-icon:hover .main-body {
@@ -174,12 +173,12 @@
   transition-delay: 0.05s;
 }
 
-.like-icon:active .main-body{
+.like-icon:active .main-body {
   fill: var(--animation-fill-color);
   transition-delay: 0.05s;
 }
 
-.like-icon:active .core{
+.like-icon:active .core {
   fill: var(--animation-fill-color);
   transition-delay: 0s;
 }
@@ -189,7 +188,7 @@
   transition-delay: 0s;
 }
 
-.like-icon.is-liked .main-body{
+.like-icon.is-liked .main-body {
   fill: var(--animation-fill-color);
   transition-delay: 0.06s;
 }
@@ -201,20 +200,21 @@
 }
 
 .like-icon.is-liked .heart {
+  transform-origin: center;
   animation: likeAnimationScale 0.3s ease-in;
   animation-delay: 0.1s;
-  transform-origin: center
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparksAnimation 0.3s ease-in;
   transform-origin: center;
+  animation: sparksAnimation 0.3s ease-in;
   animation-delay: 0.3s;
 }
+
 .card__icon-button {
-  background-color: transparent;
   border: none;
   padding: 0;
+  background-color: transparent;
 }
 
 .card-animation {
@@ -223,11 +223,11 @@
 }
 
 .card__like-button {
-  inline-size: 130px;
-  padding: 9px 17px;
-  background-color: #fff;
-  font-family: var(--second-font), sans-serif;
   border: 2px solid var(--contour-color, #000);
+  padding: 9px 17px;
+  font-family: var(--second-font), sans-serif;
+  background-color: #fff;
+  inline-size: 130px;
 }
 
 .card-animation:hover {
@@ -239,11 +239,11 @@
   position: absolute;
   top: 0;
   left: 0;
+  background-color: var(--contour-color, #000);
+  transition: transform 0.5s ease-in-out;
+  transform: translate(-100%, -100%);
   inline-size: 100%;
   block-size: 100%;
-  background-color: var(--contour-color, #000);
-  transform: translate(-100%, -100%) ;
-  transition: transform 0.5s ease-in-out;
 }
 
 .card-animation:hover::after {
@@ -262,107 +262,106 @@
 
 .image-container {
   position: relative;
-
 }
 
 .image-card {
+  border-top: 2px solid var(--contour-color, #000);
+  border-bottom: 2px solid var(--contour-color, #000);
+  object-fit: cover;
+  object-position: center;
   min-inline-size: 320px;
   max-inline-size: 700px;
   max-block-size: 700px;
   min-block-size: 320px;
   inline-size: 100%;
   block-size: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-bottom: 2px solid var(--contour-color, #000);
-  border-top: 2px solid var(--contour-color, #000);
 }
 
 .save-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
   border: 2px solid var(--contour-color, #000);
   padding: 15px 18px;
   font-size: var(--second-font-size);
-  inline-size: min(81.6%, 335px);
   background-color: transparent;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  justify-self: center;
-  gap: 8px;
+  inline-size: min(81.6%, 335px);
 }
 
 .save-button-text {
+  position: relative;
+  z-index: 1;
+  color: #fff;
   font-family: var(--second-font), sans-serif;
   font-size: var(--second-font-size);
   letter-spacing: 0;
-  position: relative;
-  color: #fff;
-  z-index: 1;
   mix-blend-mode: difference;
 }
 
-  .image-default {
-    filter: blur(5px);
-  }
+.image-default {
+  filter: blur(5px) contrast(150%);
+}
 
-  .image-dark {
-    filter: grayscale(80%);
-  }
+.image-dark {
+  filter: grayscale(80%);
+}
 
-  .image-grisaille {
-    filter: brightness(0.3);
-  }
+.image-grisaille {
+  filter: brightness(0.3);
+}
 
-  .image-contrast {
-    filter: contrast(200%);
-  }
+.image-contrast {
+  filter: contrast(200%);
+}
 
-  .image-negative {
-    filter: sepia(70%);
-  }
+.image-negative {
+  filter: sepia(70%);
+}
 
-  .image-neon {
-    filter: saturate(30%);
-  }
+.image-neon {
+  filter: saturate(30%);
+}
 
-  .image-blur {
-    filter: invert(75%);
-  }
+.image-blur {
+  filter: invert(75%);
+}
 
 .image-disket {
   position: relative;
-  mix-blend-mode: difference;
   z-index: 1;
+  mix-blend-mode: difference;
 }
 
 .modal-window-disket {
-  max-inline-size: 353px;
   padding: 30px;
+  max-inline-size: 353px;
 }
 
 .modal-button-close {
   width: 100%;
   border: 2px solid var(--contour-color, #000);
   padding: 9px 17px;
-  background-color: transparent;
+  font-family: var(--second-font), sans-serif;
   line-height: 90%;
   text-transform: uppercase;
-  font-family: var(--second-font), sans-serif;
+  background-color: transparent;
 }
 
 .modal-content-text {
-  text-transform: uppercase;
-  line-height: 150%;
   font-family: var(--second-font), sans-serif;
+  line-height: 150%;
+  text-transform: uppercase;
 }
 
 .content-container {
   display: grid;
   grid-template-columns: 39px 1fr;
+  align-items: center;
   gap: 20px;
   padding-bottom: 30px;
-  align-items: center;
 }
 
 .modal-image-disket {
@@ -378,7 +377,7 @@ dialog::backdrop {
   backdrop-filter: blur(7px);
 }
 
-@media(height > 667px){
+@media (height > 667px) {
   .main {
     gap: 49px;
   }
