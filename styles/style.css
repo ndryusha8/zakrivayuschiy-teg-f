@@ -312,15 +312,6 @@
   mix-blend-mode: difference;
 }
 
-.button__text {
-  position: relative;
-  z-index: 1;
-  color: #fff;
-  font-size: var(--second-font-size, 14px);
-  line-height: 90%;
-  mix-blend-mode: difference;
-}
-
 .image-default {
   filter: blur(5px) contrast(150%);
 }
