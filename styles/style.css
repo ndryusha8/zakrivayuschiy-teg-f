@@ -90,6 +90,8 @@
   gap: 24px;
   padding: 19px 25px 25px;
   font-size: var(--main-font-size, 18px);
+  font-weight: var(--main-weight);
+  font-variation-settings: "wght" var(--main-weight);
   line-height: 117%;
 }
 
@@ -242,7 +244,7 @@
   left: 0;
   background-color: var(--contour-color, #000);
   transition: transform 0.5s ease-in-out;
-  transform: translate(-100%, -15%);
+  transform: translate(-100%, 0%);
   inline-size: 100%;
   block-size: 100%;
 }
@@ -355,12 +357,17 @@
 .modal-button-close {
   width: 100%;
   border: 2px solid var(--contour-color, #000);
-  padding: 9px 17px;
+  padding: 8px 17px 6px;
+  background-color: transparent;
+}
+
+.modal-button-close-text {
+  font-size: var(--second-font-size) !important;
   font-weight: var(--accent-weight);
+  font-variation-settings: "wght" var(--accent-weight);
   font-family: var(--second-font);
   line-height: 90%;
   text-transform: uppercase;
-  background-color: transparent;
 }
 
 .modal-content-text {
